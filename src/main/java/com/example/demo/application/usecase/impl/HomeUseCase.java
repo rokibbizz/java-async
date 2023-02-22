@@ -23,7 +23,7 @@ public class HomeUseCase implements IHomeUseCase {
         String A = homeService.getA();
         String B = homeService.getB();
         String C = homeService.getC();
-        String res = A + " " + B + " " + C + " WithOut Async";
+        String res = A + " " + B + " " + C + " WithOut Async Total Response Time: "+ ((System.currentTimeMillis() - startTime) / 1000) + " seconds";
         System.out.println("total time " + ((System.currentTimeMillis() - startTime) / 1000) + " seconds");
 
         return new ResponseEntity<>(res, HttpStatus.OK);
@@ -57,8 +57,8 @@ public class HomeUseCase implements IHomeUseCase {
         String A = futureA.get();
         String B = futureB.get();
         String C = futureC.get();
-        String res = A + " " + B + " " + C + " with async";
         System.out.println("total time " + ((System.currentTimeMillis() - startTime) / 1000) + " seconds");
+        String res = A + " " + B + " " + C + " with async Total Response Time: "+ ((System.currentTimeMillis() - startTime) / 1000) + " seconds";
 
         return new ResponseEntity<>(res, HttpStatus.OK);
     }
@@ -77,7 +77,7 @@ public class HomeUseCase implements IHomeUseCase {
         String B = CF_B.get();
         String C = CF_C.get();
 
-        String res = A + " " + B + " " + C + " WithSpringBoot Async";
+        String res = A + " " + B + " " + C + " WithSpringBoot Async Total Response Time: "+ ((System.currentTimeMillis() - startTime) / 1000) + " seconds";
         System.out.println("total time " + ((System.currentTimeMillis() - startTime) / 1000) + " seconds");
 
         return new ResponseEntity<>(res, HttpStatus.OK);
@@ -95,8 +95,7 @@ public class HomeUseCase implements IHomeUseCase {
         String A = CF_A.get();
         String B = CF_B.get();
         String C = CF_C.get();
-
-        String res = A + " " + B + " " + C + " WithJoin Async";
+        String res = A + " " + B + " " + C + " WithJoin Async Total Response Time: "+ ((System.currentTimeMillis() - startTime) / 1000) + " seconds";
         System.out.println("total time " + ((System.currentTimeMillis() - startTime) / 1000) + " seconds");
 
         return new ResponseEntity<>(res, HttpStatus.OK);
